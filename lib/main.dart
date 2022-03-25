@@ -10,6 +10,10 @@ import 'package:e_agri_farmers/view/screens/farmer/farmer_login/verify_login.dar
 import 'package:e_agri_farmers/view/screens/general/Explore/kharip/croptypes.dart';
 import 'package:e_agri_farmers/view/screens/general/crop_prediction/crop_prediction_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/general_controller.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_detail_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/techniques/tech_detail_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/techniques/tech_screen.dart';
 
 import 'package:e_agri_farmers/view/screens/onboard/choose_type.dart';
 import 'package:e_agri_farmers/view/screens/farmer/farmer_register/farmer_register_screen.dart';
@@ -120,6 +124,10 @@ class _MyAppState extends State<MyApp> {
         routes: {
           RoutePaths.generalController : (ctx) => const GeneralController(),
           RoutePaths.cropType : (ctx) => const CropTypes(),
+          RoutePaths.schemaScreen : (ctx) => const SchemaScreen(),
+          RoutePaths.schemaDetailScreen : (ctx) => const SchemaDetailScreen(),
+          RoutePaths.techScreen : (ctx) => const TechScreen(),
+          RoutePaths.techDetailScreen : (ctx) => const TechDetailScreen(),
 
           RoutePaths.onBoardScreen : (context) => const OnBoardScreen(),
           RoutePaths.chooseType : (context) => const ChooseType(),

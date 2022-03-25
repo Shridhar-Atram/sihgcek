@@ -1,7 +1,10 @@
 class RoutePaths{
   static String generalController = "general_controller";
   static String cropType = "general_controller/cropType";
-
+  static String schemaScreen = "general_controller/schemaScreen";
+  static String techDetailScreen = "general_controller/techScreen/techDetailScreen";
+  static String techScreen = "general_controller/techScreen";
+  static String schemaDetailScreen = "general_controller/schemaScreen/schemaDetailScreen";
   static String onBoardScreen = "/on_board_screen";
   static String chooseType = "/on_board_screen/chooseType";
   static String registerFarmer = "/on_board_screen/chooseType/registerFarmer";

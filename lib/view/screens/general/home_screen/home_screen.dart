@@ -1,9 +1,11 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_agri_farmers/constants/colors/constant_colors.dart';
 import 'package:e_agri_farmers/constants/lmagepaths/logopaths.dart';
 import 'package:e_agri_farmers/helper/button_helper.dart';
 import 'package:e_agri_farmers/helper/text_helper.dart';
 import 'package:e_agri_farmers/helper/text_input_controller.dart';
+import 'package:e_agri_farmers/localization/lang_constants.dart';
 import 'package:e_agri_farmers/router/route_paths.dart';
 import 'package:e_agri_farmers/utils/LocalStorage/shared_preferences.dart';
 import 'package:e_agri_farmers/view/screens/buyer/buyer_dashboard/add_crop_demand_buyer/state_and_cities.dart';
@@ -21,10 +23,15 @@ class HomeScreenGeneral extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
+String val = "";
 class _HomeScreenState extends State<HomeScreenGeneral> {
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore.instance.collection("scheme").doc("B8GrESpVB7Bk66yl4wzl").get().then((value) {
+      val = value.get("scheme").toString();
+      print(val);
+    });
+
     return SingleChildScrollView(
       physics: const ClampingScrollPhysics(),
       child: Center(
@@ -37,7 +44,7 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
               Column(
                 children: [
                   Container(
-                    child: Image.asset(LogoPaths.imagePath),
+                    child: Image.asset("assets/images/board.png"),
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 18),
@@ -46,16 +53,19 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                       children: [
                         Container(
                           margin: EdgeInsets.all(5),
-                          child: const Text(
-                            "Notification",
-                            style: TextStyle(
+                          child:  Text(
+                            getTranslated(context, "Notification") ?? "",
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w700
                             ),
                           ),
                           alignment: Alignment.topRight,
                         ),
-                        const Text(
-                          "Notification : new schema has been arrived click here to apply",
+                        TextHelper.textWithColorSize(
+                          val,
+                          15,
+                          Colors.black,
+                          fontWeight: FontWeight.w400
                         )
                       ],
                     ),
@@ -71,16 +81,30 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children:  [
                             NameCard(name: 'Crops',val : 'crops'),
                             NameCard(name: 'Tools & instruments', val : 'tools'),
-                            NameCard(name: 'Techniques', val : 'techniques'),
+                            GestureDetector(
+                              onTap: () {
+                                FirebaseAuth.instance.signOut();
+                                UserPreferences.clearData();
+                                Navigator.pushNamed(context, RoutePaths.techScreen);
+                              },
+                              child: NameCard(name: 'Techniques', val : 'techniques'),
+                            ),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            NameCard(name: 'Schemas', val : 'schem'),
+                            GestureDetector(
+                              onTap: () {
+                                FirebaseAuth.instance.signOut();
+                                UserPreferences.clearData();
+                                Navigator.pushNamed(context, RoutePaths.schemaScreen);
+                              },
+                              child: NameCard(name: 'Schemas', val : 'schem'),
+                            ),
                             NameCard(name: 'Import & Export', val : 'import'),
                             GestureDetector(
                               onTap: () {

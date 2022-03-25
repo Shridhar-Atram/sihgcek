@@ -25,6 +25,12 @@ class SplashScreen extends StatelessWidget {
 
   Future<void> doneInitializing(BuildContext context) async {
     await UserPreferences.init();
+    await Future.delayed(Duration(seconds: 2));
+    print("sih here");
+    FirebaseAuth.instance.signOut();
+    UserPreferences.clearData();
+    Navigator.pushReplacementNamed(context, RoutePaths.generalController);
+    return;
     if (UserPreferences.getBuyerID() != null &&
         UserPreferences.getBuyerID() != "" &&
         FirebaseAuth.instance.currentUser != null &&
@@ -53,9 +59,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     initializeFirebase(context);
     return Scaffold(
-        backgroundColor: ConstantColors.mPrimaryColor,
+        backgroundColor: Colors.white,
         body: Center(
-            child: TextHelper.textWithColorSize("E-Agri", 18, Colors.white,
-                fontWeight: FontWeight.w600)));
+            child: Image.asset("assets/logos/mainlogo.png")));
   }
 }

@@ -1,5 +1,6 @@
 
 import 'package:e_agri_farmers/constants/lmagepaths/logopaths.dart';
+import 'package:e_agri_farmers/router/route_paths.dart';
 import 'package:flutter/cupertino.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -23,14 +24,18 @@ class _exploreScreenState extends State<ExploreScreen> {
               margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
               child: Column(
                 children: [
+                  GestureDetector(
+                    child: Container(
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset(LogoPaths.imagePath),
+                        ),
+                    onTap: () {Navigator.pushNamed(context, RoutePaths.cropType);}
+                  ),
                   Container(
                     margin: EdgeInsets.all(10),
                     child: Image.asset(LogoPaths.imagePath),
                   ),
                   Container(
-                    margin: EdgeInsets.all(10),
-                    child: Image.asset(LogoPaths.imagePath),
-                  ),Container(
                     margin: EdgeInsets.all(10),
                     child: Image.asset(LogoPaths.imagePath),
                   ),

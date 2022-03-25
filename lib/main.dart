@@ -7,6 +7,7 @@ import 'package:e_agri_farmers/view/screens/buyer/buyer_register/buyer_verify.da
 import 'package:e_agri_farmers/view/screens/farmer/farmer_dashboard/farmer_dashboard_controller.dart';
 import 'package:e_agri_farmers/view/screens/farmer/farmer_login/login_screen.dart';
 import 'package:e_agri_farmers/view/screens/farmer/farmer_login/verify_login.dart';
+import 'package:e_agri_farmers/view/screens/general/Explore/kharip/croptypes.dart';
 import 'package:e_agri_farmers/view/screens/general/crop_prediction/crop_prediction_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/general_controller.dart';
 
@@ -118,6 +119,8 @@ class _MyAppState extends State<MyApp> {
         },
         routes: {
           RoutePaths.generalController : (ctx) => const GeneralController(),
+          RoutePaths.cropType : (ctx) => const CropTypes(),
+
           RoutePaths.onBoardScreen : (context) => const OnBoardScreen(),
           RoutePaths.chooseType : (context) => const ChooseType(),
           RoutePaths.registerFarmer : (ctx) => const FarmerRegisterScreen(),
@@ -143,7 +146,7 @@ class _MyAppState extends State<MyApp> {
           // RoutePaths.auctionFullData : (ctx) => const AuctionDetails(),
 
         },
-        initialRoute: RoutePaths.generalController,
+        initialRoute: RoutePaths.splashScreen,
       );
     }
   }

@@ -1,5 +1,6 @@
 class RoutePaths{
   static String generalController = "general_controller";
+  static String cropType = "general_controller/cropType";
 
   static String onBoardScreen = "/on_board_screen";
   static String chooseType = "/on_board_screen/chooseType";

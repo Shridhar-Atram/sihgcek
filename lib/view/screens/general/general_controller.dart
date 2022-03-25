@@ -103,7 +103,12 @@ class _GeneralControllerState extends State<GeneralController> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          TextHelper.textWithColorSize("AGRITECH" , 20, ConstantColors.mPrimaryColor , fontWeight: FontWeight.w700),
+          Container(
+            alignment: Alignment.topLeft,
+            height: 35,
+            width: 200,
+            child: Image.asset("assets/logos/mainlogo.png"),
+          ),
           Row(
             children: [
               Container(

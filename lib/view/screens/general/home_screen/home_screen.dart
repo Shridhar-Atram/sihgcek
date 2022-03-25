@@ -4,7 +4,10 @@ import 'package:e_agri_farmers/constants/lmagepaths/logopaths.dart';
 import 'package:e_agri_farmers/helper/button_helper.dart';
 import 'package:e_agri_farmers/helper/text_helper.dart';
 import 'package:e_agri_farmers/helper/text_input_controller.dart';
+import 'package:e_agri_farmers/router/route_paths.dart';
+import 'package:e_agri_farmers/utils/LocalStorage/shared_preferences.dart';
 import 'package:e_agri_farmers/view/screens/buyer/buyer_dashboard/add_crop_demand_buyer/state_and_cities.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -57,8 +60,9 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                       ],
                     ),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: ConstantColors.mPrimaryColor)
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(17),
+                        // border: Border.all(color: ConstantColors.mPrimaryColor)
                     ),
                   ),
                   Container(
@@ -68,17 +72,24 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: const [
-                            NameCard(name: 'Crops',),
-                            NameCard(name: 'Tools & instruments',),
-                            NameCard(name: 'Techniques',),
+                            NameCard(name: 'Crops',val : 'crops'),
+                            NameCard(name: 'Tools & instruments', val : 'tools'),
+                            NameCard(name: 'Techniques', val : 'techniques'),
                           ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
-                            NameCard(name: 'Schemas',),
-                            NameCard(name: 'Import & Export',),
-                            NameCard(name: 'Crop Shop',),
+                          children: [
+                            NameCard(name: 'Schemas', val : 'schem'),
+                            NameCard(name: 'Import & Export', val : 'import'),
+                            GestureDetector(
+                              onTap: () {
+                                FirebaseAuth.instance.signOut();
+                                UserPreferences.clearData();
+                                Navigator.pushNamed(context, RoutePaths.onBoardScreen);
+                              },
+                              child: NameCard(name: 'Crop Shop', val : 'shop'),
+                            ),
                           ],
                         ),
 

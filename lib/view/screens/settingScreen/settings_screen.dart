@@ -29,7 +29,7 @@ class SettingScreen extends StatelessWidget {
                 onPressed: (){
                   FirebaseAuth.instance.signOut();
                   UserPreferences.clearData();
-                  Navigator.pushNamedAndRemoveUntil(context, RoutePaths.onBoardScreen , (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(context, RoutePaths.generalController , (route) => false);
                 },
                 child: TextHelper.textWithColorSize("Sign Out",
                     18, Colors.white , fontWeight: FontWeight.w700),

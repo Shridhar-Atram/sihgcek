@@ -4,6 +4,8 @@ import 'package:e_agri_farmers/constants/colors/constant_colors.dart';
 import 'package:e_agri_farmers/helper/text_helper.dart';
 import 'package:e_agri_farmers/router/route_paths.dart';
 import 'package:e_agri_farmers/view/dialogs/lang_dialog.dart';
+import 'package:e_agri_farmers/view/screens/general/Explore/explorescreen.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'crop_prediction/crop_prediction_screen.dart';
@@ -29,10 +31,10 @@ class _GeneralControllerState extends State<GeneralController> {
   @override
   Widget build(BuildContext context) {
     List<Widget> _widgetOptions = <Widget>[
-      CropPrediction(ctx: context),
+      HomeScreenGeneral(ctx: context),
       CropPrediction(ctx:context),
       CropPrediction(ctx: context),
-      CropPrediction(ctx:context),
+      ExploreScreen(ctx:context),
     ];
 
     return SafeArea(child: Scaffold(
@@ -80,7 +82,7 @@ class _GeneralControllerState extends State<GeneralController> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: "Explore",
+          label: "Fertiliser",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home),

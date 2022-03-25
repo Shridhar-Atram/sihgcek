@@ -75,6 +75,7 @@ flutter:
     - lib/lang/mr.json
     - lib/lang/ta.json
     - assets/logos/
+    - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

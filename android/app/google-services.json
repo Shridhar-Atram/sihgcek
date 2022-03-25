@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "403355066852",
+    "project_id": "miniproject-eae71",
+    "storage_bucket": "miniproject-eae71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403355066852:android:2b5b830ff42ab285fde7f1",
+        "android_client_info": {
+          "package_name": "com.eagri.e_agri_farmers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403355066852-2gv60vuref1pf6mgoq71e35smgfuivnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXPMFXypMFM3sr0AjMJbVOvXKkWjSnPg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403355066852-2gv60vuref1pf6mgoq71e35smgfuivnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

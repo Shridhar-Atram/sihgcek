@@ -12,6 +12,7 @@ import 'package:e_agri_farmers/view/screens/buyer/buyer_dashboard/add_crop_deman
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'name_card.dart';
 
@@ -113,7 +114,12 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                               },
                               child: NameCard(name: 'Schemas', val : 'schem'),
                             ),
-                            NameCard(name: 'Import & Export', val : 'import'),
+                            GestureDetector(
+                              onTap: () async {
+                                await launch('https://commerce.gov.in/about-us/divisions/export-products-division/export-products-agriculture/');
+                              },
+                              child: NameCard(name: 'Import & Export', val : 'import'),
+                            ),
                             GestureDetector(
                               onTap: () {
                                 FirebaseAuth.instance.signOut();

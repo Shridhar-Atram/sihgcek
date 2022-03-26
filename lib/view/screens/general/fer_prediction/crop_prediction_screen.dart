@@ -67,9 +67,13 @@ class _BuyerHomeScreenState extends State<FerPrediction> {
               TextInputController.generalTextInputController(
                   context, 'soil type', soilType , "1" , "5"),
               TextInputController.generalTextInputController(
+                  context, 'soil type', soilType , "0" , "4"),
+              TextHelper.textWithColorSize("0.Sandy  1.Loamy  2.Black  3.Red  4.Clayey", 13, Colors.black),
+              TextInputController.generalTextInputController(
                   context, 'moisture', moisture , "20 cm" , "300 cm"),
               TextInputController.generalTextInputController(
                   context, 'crop type', cropType , "1" , "11"),
+              TextHelper.textWithColorSize("1.Barley  2.Cotton  3.Ground Nuts  4.Maize  5.Millets\n6.Oil seed 7.Paddy 8.Pulses 9.Sugarcane 10.Tobacco 11.Wheat", 13, Colors.black),
               // TextInputController.generalTextInputController(
               //     context, 'Temperature', temperature),
               // TextInputController.generalTextInputController(

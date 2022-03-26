@@ -51,6 +51,21 @@ dynamic predictCrop({required dynamic data}) async {
   return;
 }
 
+dynamic predictFer({required dynamic data}) async {
+  try {
+    var x  = await HTTP.postHttpRes("https://sihgcekfer.herokuapp.com/login", data);
+    final pp = json.decode(x.body);
+    // print(pp.toString());
+    return pp;
+  } on SocketException {
+    return "noic";
+  } catch (e) {
+    PP.p(e.toString());
+  }
+  return;
+}
+
+
 dynamic getAuctionData(String auctionID) async {
   return await HTTP.getHttpRes(Uri.encodeFull(API.auctionData + auctionID));
 }

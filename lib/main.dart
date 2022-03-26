@@ -10,6 +10,8 @@ import 'package:e_agri_farmers/view/screens/farmer/farmer_login/verify_login.dar
 import 'package:e_agri_farmers/view/screens/general/Explore/kharip/croptypes.dart';
 import 'package:e_agri_farmers/view/screens/general/crop_prediction/crop_prediction_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/crop_prediction/result.dart';
+import 'package:e_agri_farmers/view/screens/general/fer_prediction/crop_prediction_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/fer_prediction/result.dart';
 import 'package:e_agri_farmers/view/screens/general/general_controller.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_detail_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_screen.dart';
@@ -134,6 +136,7 @@ class _MyAppState extends State<MyApp> {
           RoutePaths.toolScreen : (ctx) => const ToolScreen(),
           RoutePaths.toolDetailScreen : (ctx) => const ToolDetailScreen(),
           RoutePaths.resultScreen : (ctx) => const ResultScreen(),
+          RoutePaths.resultScreenfer : (ctx) => const FerScreen(),
           RoutePaths.onBoardScreen : (context) => const OnBoardScreen(),
           RoutePaths.chooseType : (context) => const ChooseType(),
           RoutePaths.registerFarmer : (ctx) => const FarmerRegisterScreen(),

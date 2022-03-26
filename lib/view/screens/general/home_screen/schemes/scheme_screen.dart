@@ -69,7 +69,7 @@ class _AddCropScreenFarmerState extends State<SchemaScreen> {
                         children: [
                           Container(
                             margin: EdgeInsets.all(15),
-                            child: TextHelper.textWithColorSize(s!, 20, Colors.red , fontWeight: FontWeight.w700),
+                            child: TextHelper.textWithColorSize(s!, 17, Colors.black , fontWeight: FontWeight.w600),
                           ),
                           Divider(
                               thickness: 1.2,

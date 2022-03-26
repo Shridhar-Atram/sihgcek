@@ -9,6 +9,7 @@ import 'package:e_agri_farmers/view/screens/general/home_screen/home_screen.dart
 import 'package:flutter/material.dart';
 
 import 'crop_prediction/crop_prediction_screen.dart';
+import 'fer_prediction/crop_prediction_screen.dart';
 
 int selectedIndex = 0;
 
@@ -33,7 +34,7 @@ class _GeneralControllerState extends State<GeneralController> {
     List<Widget> _widgetOptions = <Widget>[
       HomeScreenGeneral(ctx: context),
       CropPrediction(ctx:context),
-      CropPrediction(ctx: context),
+      FerPrediction(ctx: context),
       ExploreScreen(ctx:context),
     ];
 
@@ -81,11 +82,11 @@ class _GeneralControllerState extends State<GeneralController> {
           label: "Predict crop",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.ac_unit_rounded),
           label: "Fertiliser",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.all_inclusive),
           label: "Explore",
         ),
       ],

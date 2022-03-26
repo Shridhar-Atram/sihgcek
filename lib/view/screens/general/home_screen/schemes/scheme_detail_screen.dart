@@ -58,7 +58,7 @@ class _AddCropScreenFarmerState extends State<SchemaDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextHelper.textWithColorSize("Title:", 20, Colors.black , fontWeight:  FontWeight.w700),
+                    TextHelper.textWithColorSize("Title:", 17, Colors.black , fontWeight:  FontWeight.w600),
                     TextHelper.textWithColorSize(sd.scheme, 17, Colors.black , fontWeight:  FontWeight.w400)
                   ],
                 ),
@@ -66,7 +66,7 @@ class _AddCropScreenFarmerState extends State<SchemaDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextHelper.textWithColorSize("Docs:", 20, Colors.black , fontWeight:  FontWeight.w700),
+                    TextHelper.textWithColorSize("Docs:", 17, Colors.black , fontWeight:  FontWeight.w600),
                     TextHelper.textWithColorSize(sd.docs, 17, Colors.black , fontWeight:  FontWeight.w400)
                   ],
                 ),
@@ -74,7 +74,7 @@ class _AddCropScreenFarmerState extends State<SchemaDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextHelper.textWithColorSize("Eligibility :", 20, Colors.black , fontWeight:  FontWeight.w700),
+                    TextHelper.textWithColorSize("Eligibility :", 17, Colors.black , fontWeight:  FontWeight.w600),
                     TextHelper.textWithColorSize(sd.eligiblity, 17, Colors.black , fontWeight:  FontWeight.w400)
                   ],
                 ),
@@ -82,7 +82,7 @@ class _AddCropScreenFarmerState extends State<SchemaDetailScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextHelper.textWithColorSize("Benefit :", 20, Colors.black , fontWeight:  FontWeight.w700),
+                    TextHelper.textWithColorSize("Benefit :", 17, Colors.black , fontWeight:  FontWeight.w600),
                     TextButton(
                         onPressed: () async {
                           var url = sd.benefit;

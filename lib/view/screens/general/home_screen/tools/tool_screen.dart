@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_agri_farmers/constants/colors/constant_colors.dart';
 import 'package:e_agri_farmers/helper/text_helper.dart';
@@ -61,6 +62,8 @@ class _AddCropScreenFarmerState extends State<ToolScreen> {
               itemCount: data?.length,
               itemBuilder: (BuildContext context, int index) {
                 String? s = "nan";
+                String? link = "";
+                link  = data?[index].image_link;
                 s = data?[index].name;
                 return GestureDetector(
                   onTap: (){Navigator.pushNamed(context, RoutePaths.toolDetailScreen , arguments: {"data": data?[index]});},
@@ -68,14 +71,27 @@ class _AddCropScreenFarmerState extends State<ToolScreen> {
                       margin: EdgeInsets.symmetric(horizontal: 20),
                       child : Column(
                         children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.all(15),
-                            child: TextHelper.textWithColorSize(s!, 20, Colors.red , fontWeight: FontWeight.w700),
+                          Row(
+                            children: [
+                              Container(
+                                height: 40,
+                                width: 40,
+                                child : CachedNetworkImage(
+                                  placeholder: (context, url) => const CircularProgressIndicator(),
+                                  imageUrl: link.toString(),
+                                ),
+                              ),
+                              Container(
+                                width: 250,
+                                alignment: Alignment.centerLeft,
+                                margin: EdgeInsets.all(15),
+                                child: TextHelper.textWithColorSize(s!, 15, Colors.black , fontWeight: FontWeight.w500),
+                              ),
+                            ],
                           ),
                           Divider(
                               thickness: 1.2,
-                              color: Colors.black
+                              color: Colors.black12
                           )
                         ],
                       )

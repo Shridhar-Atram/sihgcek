@@ -68,13 +68,14 @@ class _AddCropScreenFarmerState extends State<TechScreen> {
                       child : Column(
                         children: [
                           Container(
+                            width: 250,
                             alignment: Alignment.centerLeft,
                             margin: EdgeInsets.all(15),
-                            child: TextHelper.textWithColorSize(s!, 20, Colors.red , fontWeight: FontWeight.w700),
+                            child: TextHelper.textWithColorSize(s!, 15, Colors.black , fontWeight: FontWeight.w500),
                           ),
                           Divider(
                               thickness: 1.2,
-                              color: Colors.black
+                              color: Colors.black12
                           )
                         ],
                       )

@@ -9,11 +9,13 @@ import 'package:e_agri_farmers/view/screens/farmer/farmer_login/login_screen.dar
 import 'package:e_agri_farmers/view/screens/farmer/farmer_login/verify_login.dart';
 import 'package:e_agri_farmers/view/screens/general/Explore/kharip/croptypes.dart';
 import 'package:e_agri_farmers/view/screens/general/crop_prediction/crop_prediction_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/crop_prediction/result.dart';
 import 'package:e_agri_farmers/view/screens/general/general_controller.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_detail_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/schemes/scheme_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/techniques/tech_detail_screen.dart';
 import 'package:e_agri_farmers/view/screens/general/home_screen/techniques/tech_screen.dart';
+import 'package:e_agri_farmers/view/screens/general/home_screen/tools/tool_detail_screen.dart';
 
 import 'package:e_agri_farmers/view/screens/onboard/choose_type.dart';
 import 'package:e_agri_farmers/view/screens/farmer/farmer_register/farmer_register_screen.dart';
@@ -34,6 +36,7 @@ import 'view/screens/buyer/buyer_dashboard/trade_tab_buyer/recent_bids_of_buyer/
 import 'view/screens/farmer/farmer_dashboard/add_crop_for_sell/add_crop_screen.dart';
 import 'view/screens/farmer/farmer_dashboard/farmer_home_tab/send_bid_to_buyer/send_offer_to_buyer_screen.dart';
 import 'view/screens/farmer/farmer_dashboard/farmer_trade_tab/recent_bids_of_farmer/recend_bids.dart';
+import 'view/screens/general/home_screen/tools/tool_screen.dart';
 import 'view/screens/settingScreen/settings_screen.dart';
 
 // to change lang use  this code from anywhere in class
@@ -128,7 +131,9 @@ class _MyAppState extends State<MyApp> {
           RoutePaths.schemaDetailScreen : (ctx) => const SchemaDetailScreen(),
           RoutePaths.techScreen : (ctx) => const TechScreen(),
           RoutePaths.techDetailScreen : (ctx) => const TechDetailScreen(),
-
+          RoutePaths.toolScreen : (ctx) => const ToolScreen(),
+          RoutePaths.toolDetailScreen : (ctx) => const ToolDetailScreen(),
+          RoutePaths.resultScreen : (ctx) => const ResultScreen(),
           RoutePaths.onBoardScreen : (context) => const OnBoardScreen(),
           RoutePaths.chooseType : (context) => const ChooseType(),
           RoutePaths.registerFarmer : (ctx) => const FarmerRegisterScreen(),

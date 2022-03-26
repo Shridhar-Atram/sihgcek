@@ -19,26 +19,33 @@ class _exploreScreenState extends State<ExploreScreen> {
       physics: const ClampingScrollPhysics(),
       child: Center(
           child: Container(
-              alignment: Alignment.centerLeft,
+
+              alignment: Alignment.center,
               constraints: const BoxConstraints(maxWidth: 500),
-              margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
+              margin: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   GestureDetector(
                     child: Container(
                         margin: EdgeInsets.all(10),
-                        child: Image.asset(LogoPaths.imagePath),
+                        child: Image.asset("assets/images/kharip.png"),
                         ),
                     onTap: () {Navigator.pushNamed(context, RoutePaths.cropType);}
                   ),
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Image.asset(LogoPaths.imagePath),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      child: Image.asset("assets/images/rabbi.png"),
+                    ),
+                      onTap: () {Navigator.pushNamed(context, RoutePaths.cropType);}
                   ),
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Image.asset(LogoPaths.imagePath),
-                  ),
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      child: Image.asset("assets/images/zaid.png"),
+                    ),
+                      onTap: () {Navigator.pushNamed(context, RoutePaths.cropType);}
+                  )
                 ],
               )
           )

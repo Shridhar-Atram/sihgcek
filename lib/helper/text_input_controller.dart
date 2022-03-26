@@ -15,7 +15,7 @@ class TextInputController{
     );
   }
 
-   static Widget generalTextInputController(BuildContext context , String name , TextEditingController x , {String prefix = "" , String suffix = "" , TextInputType keyboardType = TextInputType.name }){
+   static Widget generalTextInputController(BuildContext context , String name , TextEditingController x ,String  min , String max , {String prefix = "" , String suffix = "" , TextInputType keyboardType = TextInputType.name }){
      return Container(
        margin: const EdgeInsets.only(top: 10, bottom: 10),
        child: TextFormField(
@@ -26,7 +26,7 @@ class TextInputController{
            // prefix: Text(prefix , style: TextStyle(color: ConstantColors.mPrimaryColor),),
            // filled: true,
            // suffix: Text(suffix , style: TextStyle(color: ConstantColors.mPrimaryColor),),
-           hintText: name,
+           hintText: name + "    [" + min.toString() + " - " + max.toString() + "]",
            hintStyle: TextStyle(fontWeight: FontWeight.w700 )
            // fillColor: ConstantColors.textInputCtrl,
            // helperText: name,

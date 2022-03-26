@@ -83,7 +83,15 @@ class _HomeScreenState extends State<HomeScreenGeneral> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children:  [
                             NameCard(name: 'Crops',val : 'crops'),
-                            NameCard(name: 'Tools & instruments', val : 'tools'),
+                            // NameCard(name: 'Tools & instruments', val : 'tools'),
+                            GestureDetector(
+                              onTap: () {
+                                FirebaseAuth.instance.signOut();
+                                UserPreferences.clearData();
+                                Navigator.pushNamed(context, RoutePaths.toolScreen);
+                              },
+                              child: NameCard(name: 'Tools & instruments', val : 'tools'),
+                            ),
                             GestureDetector(
                               onTap: () {
                                 FirebaseAuth.instance.signOut();

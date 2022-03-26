@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -33,6 +34,21 @@ class API {
   static String addBidFarmer = baseurl + "/api/demand/auction/add/bid";
   static String auctionData = baseurl + "/api/demand/auction/bid/";
   static String auctionDataFarmer = baseurl + "/api/sell/auction/bid/";
+}
+
+
+dynamic predictCrop({required dynamic data}) async {
+  try {
+    var x  = await HTTP.postHttpRes("https://cropitup.herokuapp.com/login", data);
+    final pp = json.decode(x.body);
+    // print(pp.toString());
+    return pp;
+  } on SocketException {
+    return "noic";
+  } catch (e) {
+    PP.p(e.toString());
+  }
+  return;
 }
 
 dynamic getAuctionData(String auctionID) async {

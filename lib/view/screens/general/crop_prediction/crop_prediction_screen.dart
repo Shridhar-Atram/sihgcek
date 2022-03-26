@@ -3,6 +3,8 @@ import 'package:e_agri_farmers/constants/colors/constant_colors.dart';
 import 'package:e_agri_farmers/helper/button_helper.dart';
 import 'package:e_agri_farmers/helper/text_helper.dart';
 import 'package:e_agri_farmers/helper/text_input_controller.dart';
+import 'package:e_agri_farmers/router/route_paths.dart';
+import 'package:e_agri_farmers/services/HTTP/api.dart';
 import 'package:e_agri_farmers/view/screens/buyer/buyer_dashboard/add_crop_demand_buyer/state_and_cities.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,7 @@ class CropPrediction extends StatefulWidget {
 class _BuyerHomeScreenState extends State<CropPrediction> {
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
       physics: const ClampingScrollPhysics(),
       child: Center(
@@ -45,19 +48,19 @@ class _BuyerHomeScreenState extends State<CropPrediction> {
             children: [
               stateAndCityPicker(),
               TextInputController.generalTextInputController(
-                  context, 'Nitrogen', nitrogen),
+                  context, 'Nitrogen', nitrogen , "0 ppm" , "140 ppm"),
               TextInputController.generalTextInputController(
-                  context, 'Phosphorus', phosphorus),
+                  context, 'Phosphorus', phosphorus , "5 ppm" , "145 ppm"),
               TextInputController.generalTextInputController(
-                  context, 'Potassium', potassium),
+                  context, 'Potassium', potassium , "5 ppm" , "205 ppm"),
               TextInputController.generalTextInputController(
-                  context, 'ph', ph),
+                  context, 'ph', ph , "3" , "10"),
               TextInputController.generalTextInputController(
-                  context, 'Rainfall', rainfall),
-              TextInputController.generalTextInputController(
-                  context, 'Temperature', temperature),
-              TextInputController.generalTextInputController(
-                  context, 'Humidity', humidity),
+                  context, 'Rainfall', rainfall , "20 cm" , "300 cm"),
+              // TextInputController.generalTextInputController(
+              //     context, 'Temperature', temperature),
+              // TextInputController.generalTextInputController(
+              //     context, 'Humidity', humidity),
               // _profileImage != null
               //     ? SizedBox(
               //   width: MediaQuery.of(context).size.width * 0.8,
@@ -107,7 +110,25 @@ class _BuyerHomeScreenState extends State<CropPrediction> {
                 margin: const EdgeInsets.only(top: 20, bottom: 30),
                 height: 48,
                 child: ButtonHelper.getElevatedButton(
-                    "Submit", () => {}),
+                    "Submit", () async {
+                      var data = {
+                        "n": nitrogen.text,
+                        "p": phosphorus.text,
+                        "k" : potassium.text,
+                        "Ph" : ph.text,
+                        "Rain" : rainfall.text,
+                        "State" : state,
+                        "City" : city,
+                      };
+
+                      print(data);
+                    var  val = await predictCrop(data: data);
+                        print(val);
+                      Navigator.pushNamed(context, RoutePaths.resultScreen , arguments: {"data": val});
+
+                    }
+                      ),
+
               ),
             ],
           ),

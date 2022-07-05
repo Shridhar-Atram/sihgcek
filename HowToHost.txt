@@ -1,0 +1,4 @@
++ use firebase init
++   if give error of not found project then delete all from .firebaserc
++ then use firebase build web app
++ firebase deploy
